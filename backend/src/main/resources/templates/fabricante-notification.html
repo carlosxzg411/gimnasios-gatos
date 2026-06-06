@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Nuevo Pedido</title></head>
+<body style="font-family:Arial,sans-serif;padding:20px;">
+<h2>Nuevo Pedido #<span th:text="${order.id}">0</span></h2>
+
+<h3>Datos del Cliente</h3>
+<p>Nombre: <span th:text="${cliente.nombre}">nombre</span></p>
+<p>Email: <span th:text="${cliente.email}">email</span></p>
+<p>Teléfono: <span th:text="${cliente.telefono}">tel</span></p>
+<p>Dirección de envío: <span th:text="${order.direccionEnvio}">dir</span></p>
+
+<h3>Especificaciones del Pedido</h3>
+<table style="width:100%;border-collapse:collapse;">
+  <thead>
+    <tr style="background:#f0f0f0;">
+      <th style="padding:10px;border:1px solid #ddd;text-align:left;">Producto</th>
+      <th style="padding:10px;border:1px solid #ddd;text-align:center;">Cantidad</th>
+      <th style="padding:10px;border:1px solid #ddd;text-align:left;">Personalización</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="item : ${order.items}">
+      <td style="padding:10px;border:1px solid #ddd;" th:text="${item.product.nombre}">Producto</td>
+      <td style="padding:10px;border:1px solid #ddd;text-align:center;" th:text="${item.cantidad}">1</td>
+      <td style="padding:10px;border:1px solid #ddd;" th:text="${item.personalizacionTexto ?: 'Sin personalización'}">-</td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="margin-top:30px;font-size:12px;color:#888;">Este es un mensaje automático del sistema de Gimnasios para Gatos.</p>
+</body>
+</html>

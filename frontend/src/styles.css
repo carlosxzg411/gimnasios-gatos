@@ -1,0 +1,5 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#fafafa; color:#333; line-height:1.6; }
+a { color:#3498db; text-decoration:none; }
+a:hover { text-decoration:underline; }
+h2 { margin-bottom:20px; }

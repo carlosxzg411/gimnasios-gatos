@@ -1,0 +1,12 @@
+.admin-section { max-width:900px; margin:auto; }
+.header { display:flex; justify-content:space-between; align-items:center; }
+.header button { background:#27ae60; color:#fff; border:none; padding:8px 16px; border-radius:4px; cursor:pointer; }
+.product-form { display:grid; grid-template-columns:1fr 1fr; gap:10px; border:1px solid #ddd; padding:20px; border-radius:8px; margin-bottom:20px; }
+.product-form div:last-child { grid-column:span 2; }
+.product-form label { display:block; font-weight:600; font-size:0.9rem; }
+.product-form input, .product-form textarea, .product-form select { width:100%; padding:6px; border:1px solid #ccc; border-radius:4px; box-sizing:border-box; }
+.product-form button { padding:8px 16px; cursor:pointer; }
+table { width:100%; border-collapse:collapse; }
+th, td { padding:10px; border-bottom:1px solid #eee; text-align:left; }
+button { margin-right:5px; }
+.danger { background:#e74c3c; color:#fff; border:none; padding:4px 10px; border-radius:4px; cursor:pointer; }

@@ -1,0 +1,15 @@
+<h3>Gestionar Pedidos</h3>
+<table>
+  <thead><tr><th>#</th><th>Cliente</th><th>Total</th><th>Estado</th><th>Fecha</th><th>Acción</th></tr></thead>
+  <tbody>
+    <tr *ngFor="let o of orders">
+      <td>{{ o.id }}</td><td>{{ o.usuario?.nombre }}</td><td>${{ o.total }}</td>
+      <td>{{ o.estado }}</td><td>{{ o.fecha | date:'short' }}</td>
+      <td>
+        <select (change)="updateStatus(o.id, $any($event.target).value)" [value]="o.estado">
+          <option>PENDIENTE</option><option>PAGADO</option><option>ENVIADO</option><option>ENTREGADO</option><option>CANCELADO</option>
+        </select>
+      </td>
+    </tr>
+  </tbody>
+</table>

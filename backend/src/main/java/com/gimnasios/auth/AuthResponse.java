@@ -1,0 +1,13 @@
+package com.gimnasios.auth;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+
+@Data @AllArgsConstructor @Builder
+public class AuthResponse {
+    private String token;
+    private String email;
+    private String nombre;
+    private String rol;
+}

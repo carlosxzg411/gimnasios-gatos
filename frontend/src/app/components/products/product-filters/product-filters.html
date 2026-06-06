@@ -1,0 +1,9 @@
+<div class="filters">
+  <select [(ngModel)]="tamano"><option value="">Todos los tamaños</option><option>Pequeño</option><option>Mediano</option><option>Grande</option></select>
+  <select [(ngModel)]="color"><option value="">Todos los colores</option><option>Beige</option><option>Gris</option><option>Crema</option><option>Natural</option><option>Blanco</option><option>Negro</option></select>
+  <select [(ngModel)]="material"><option value="">Todos los materiales</option><option>Sisal</option><option>MDF</option><option>Cartón</option><option>Madera</option></select>
+  <input type="number" [(ngModel)]="precioMin" placeholder="Precio min">
+  <input type="number" [(ngModel)]="precioMax" placeholder="Precio max">
+  <button (click)="apply()">Filtrar</button>
+  <button (click)="clear()">Limpiar</button>
+</div>

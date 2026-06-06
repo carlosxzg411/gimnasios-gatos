@@ -1,0 +1,4 @@
+.filters { display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap; align-items:center; }
+.filters select, .filters input { padding:8px; border:1px solid #ccc; border-radius:4px; }
+.filters button { padding:8px 16px; background:#3498db; color:#fff; border:none; border-radius:4px; cursor:pointer; }
+.filters button:last-child { background:#95a5a6; }

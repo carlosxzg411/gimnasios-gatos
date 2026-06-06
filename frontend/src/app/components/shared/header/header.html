@@ -1,0 +1,17 @@
+<nav>
+  <a routerLink="/productos" class="logo">🐱 Gimnasios para Gatos</a>
+  <div class="nav-links">
+    <a routerLink="/productos">Productos</a>
+    <a routerLink="/custom-request">Personalizar</a>
+    <a routerLink="/cart">Carrito ({{ cart.getCount() }})</a>
+    <ng-container *ngIf="auth.isLoggedIn(); else loginBlock">
+      <span>Hola, {{ auth.getUser()?.nombre }}</span>
+      <a *ngIf="auth.isAdmin()" routerLink="/admin">Admin</a>
+      <button (click)="logout()">Salir</button>
+    </ng-container>
+    <ng-template #loginBlock>
+      <a routerLink="/login">Ingresar</a>
+      <a routerLink="/register">Registrarse</a>
+    </ng-template>
+  </div>
+</nav>

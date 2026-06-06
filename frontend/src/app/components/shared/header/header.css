@@ -1,0 +1,5 @@
+nav { display:flex; align-items:center; justify-content:space-between; padding:15px 30px; background:#2c3e50; color:#fff; }
+.logo { font-size:1.3rem; font-weight:bold; color:#fff; text-decoration:none; }
+.nav-links { display:flex; align-items:center; gap:15px; }
+.nav-links a { color:#ecf0f1; text-decoration:none; }
+.nav-links button { background:#e74c3c; color:#fff; border:none; padding:5px 12px; border-radius:4px; cursor:pointer; }

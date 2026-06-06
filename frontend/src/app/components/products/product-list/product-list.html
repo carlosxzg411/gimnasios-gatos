@@ -1,0 +1,15 @@
+<h2>Gimnasios para Gatos</h2>
+<app-product-filters (filterChange)="onFilter($event)"></app-product-filters>
+<div class="product-grid">
+  <div class="product-card" *ngFor="let p of products">
+    <img [src]="p.imagenUrl" [alt]="p.nombre" loading="lazy">
+    <h3>{{ p.nombre }}</h3>
+    <p class="desc">{{ p.descripcion }}</p>
+    <p><strong>${{ p.precio }}</strong> | {{ p.tamano }} | {{ p.color }}</p>
+    <div class="actions">
+      <a [routerLink]="['/productos', p.id]">Detalle</a>
+      <button (click)="addToCart(p)">Agregar al carrito</button>
+    </div>
+  </div>
+</div>
+<p *ngIf="products.length === 0">No se encontraron productos.</p>

@@ -1,0 +1,14 @@
+<div class="detail" *ngIf="product">
+  <img [src]="product.imagenUrl" [alt]="product.nombre">
+  <div class="info">
+    <h2>{{ product.nombre }}</h2>
+    <p class="desc">{{ product.descripcion }}</p>
+    <p><strong>Precio:</strong> ${{ product.precio }}</p>
+    <p><strong>Tamaño:</strong> {{ product.tamano }}</p>
+    <p><strong>Color:</strong> {{ product.color }}</p>
+    <p><strong>Material:</strong> {{ product.material }}</p>
+    <p><strong>Stock:</strong> {{ product.stock }} unidades</p>
+    <button (click)="addToCart()">Agregar al carrito</button>
+    <a routerLink="/productos">Volver</a>
+  </div>
+</div>
