@@ -29,7 +29,7 @@
   position: relative;
   height: 220px;
   overflow: hidden;
-  background: #f8f9fa;
+  background: var(--bg);
 }
 
 .card-image img {

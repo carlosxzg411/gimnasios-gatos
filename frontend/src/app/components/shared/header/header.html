@@ -4,6 +4,9 @@
     <span class="logo-text">Gimnasios<span class="logo-highlight">Gato</span></span>
   </a>
   <div class="nav-links">
+    <button class="theme-btn" (click)="theme.toggle()" [attr.aria-label]="theme.isDark() ? 'Modo claro' : 'Modo oscuro'">
+      {{ theme.isDark() ? '☀️' : '🌙' }}
+    </button>
     <a routerLink="/productos" class="nav-link">Productos</a>
     <a routerLink="/custom-request" class="nav-link">Personalizar</a>
     <a routerLink="/cart" class="nav-link cart-link">

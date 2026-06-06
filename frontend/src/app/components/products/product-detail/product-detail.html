@@ -10,7 +10,7 @@
     <div class="detail-meta">
       <div class="meta-item"><strong>Tamaño:</strong> {{ product.tamano }}</div>
       <div class="meta-item"><strong>Color:</strong> {{ product.color }}</div>
-      <div class="meta-item"><strong>Material:</strong> {{ product.material }}</div>
+      <div class="meta-item"><strong>Tipo:</strong> {{ product.material }}</div>
       <div class="meta-item"><strong>Stock:</strong>
         <span [class.stock-ok]="product.stock > 5"
               [class.stock-low]="product.stock > 0 && product.stock <= 5"

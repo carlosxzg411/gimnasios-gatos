@@ -19,7 +19,7 @@ export class ProductListComponent implements OnInit {
   private colorMap: Record<string, string> = {
     'Beige': '#f5e6cc', 'Gris': '#95a5a6', 'Crema': '#fdf5e6',
     'Natural': '#a0845c', 'Blanco': '#f0f0f0', 'Negro': '#2d3436',
-    'Verde': '#2ecc71', 'Azul': '#3498db', 'Rojo': '#e74c3c'
+    'Verde': '#059669', 'Azul': '#3498db', 'Rojo': '#e74c3c'
   };
 
   constructor(private productService: ProductService, private cart: CartService) {}

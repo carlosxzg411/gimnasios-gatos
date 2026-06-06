@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../services/auth';
 import { CartService } from '../../../services/cart';
+import { ThemeService } from '../../../services/theme';
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -11,7 +12,12 @@ import { NgIf } from '@angular/common';
   styleUrl: './header.css'
 })
 export class HeaderComponent {
-  constructor(public auth: AuthService, public cart: CartService, private router: Router) {}
+  constructor(
+    public auth: AuthService,
+    public cart: CartService,
+    public theme: ThemeService,
+    private router: Router
+  ) {}
 
   logout() {
     this.auth.logout();

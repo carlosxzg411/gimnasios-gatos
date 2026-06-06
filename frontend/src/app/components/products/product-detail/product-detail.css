@@ -14,7 +14,7 @@
   position: relative;
   flex: 1;
   min-height: 400px;
-  background: #f8f9fa;
+  background: var(--bg);
 }
 
 .detail-image img {

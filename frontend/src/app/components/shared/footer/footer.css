@@ -1,6 +1,6 @@
 footer {
-  background: var(--secondary);
-  color: #bdc3c7;
+  background: var(--footer-bg);
+  color: var(--footer-text);
   margin-top: 50px;
 }
 
@@ -14,7 +14,7 @@ footer {
 }
 
 .footer-section h4 {
-  color: #fff;
+  color: var(--footer-heading);
   font-size: 1.05rem;
   margin-bottom: 14px;
   font-weight: 700;
@@ -24,7 +24,7 @@ footer {
 
 .footer-section a {
   display: block;
-  color: #bdc3c7;
+  color: var(--footer-text);
   margin-bottom: 8px;
   font-size: 0.9rem;
   text-decoration: none !important;
@@ -33,11 +33,11 @@ footer {
 .footer-section a:hover { color: var(--primary); }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid var(--footer-border);
   text-align: center;
   padding: 16px;
   font-size: 0.82rem;
-  color: #95a5a6;
+  color: var(--footer-text);
 }
 
 .footer-bottom p { margin: 0; }
