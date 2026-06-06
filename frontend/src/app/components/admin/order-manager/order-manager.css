@@ -1,3 +1,69 @@
-table { width:100%; border-collapse:collapse; }
-th, td { padding:10px; border-bottom:1px solid #eee; text-align:left; }
-select { padding:5px; border:1px solid #ccc; border-radius:4px; }
+.admin-section { max-width: 1000px; margin: 0 auto; }
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.section-header h3 { font-size: 1.3rem; color: var(--secondary); margin: 0; }
+
+.table-wrapper {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+table { width: 100%; border-collapse: collapse; }
+
+th {
+  text-align: left;
+  padding: 14px 16px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-light);
+  background: var(--bg);
+  border-bottom: 2px solid var(--border);
+}
+
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.92rem;
+}
+
+tr:last-child td { border-bottom: none; }
+
+.td-id { font-weight: 700; color: var(--text-light); font-size: 0.85rem; }
+.td-price { font-weight: 700; }
+.td-date { color: var(--text-light); font-size: 0.85rem; }
+
+.order-status {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.pendiente { background: #fef3cd; color: #856404; }
+.pagado { background: #d4edda; color: #155724; }
+.enviado { background: #cce5ff; color: #004085; }
+.entregado { background: #d4edda; color: #155724; }
+.cancelado { background: #f8d7da; color: #721c24; }
+
+.status-select {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  background: var(--bg);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.status-select:focus { outline: none; border-color: var(--primary); }

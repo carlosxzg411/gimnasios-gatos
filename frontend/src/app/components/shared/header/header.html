@@ -1,17 +1,25 @@
 <nav>
-  <a routerLink="/productos" class="logo">🐱 Gimnasios para Gatos</a>
+  <a routerLink="/productos" class="logo">
+    <span class="logo-icon">🐱</span>
+    <span class="logo-text">Gimnasios<span class="logo-highlight">Gato</span></span>
+  </a>
   <div class="nav-links">
-    <a routerLink="/productos">Productos</a>
-    <a routerLink="/custom-request">Personalizar</a>
-    <a routerLink="/cart">Carrito ({{ cart.getCount() }})</a>
+    <a routerLink="/productos" class="nav-link">Productos</a>
+    <a routerLink="/custom-request" class="nav-link">Personalizar</a>
+    <a routerLink="/cart" class="nav-link cart-link">
+      🛒 Carrito
+      <span class="cart-badge" *ngIf="cart.getCount() > 0">{{ cart.getCount() }}</span>
+    </a>
     <ng-container *ngIf="auth.isLoggedIn(); else loginBlock">
-      <span>Hola, {{ auth.getUser()?.nombre }}</span>
-      <a *ngIf="auth.isAdmin()" routerLink="/admin">Admin</a>
-      <button (click)="logout()">Salir</button>
+      <div class="user-menu">
+        <span class="user-greeting">👋 {{ auth.getUser()?.nombre }}</span>
+        <a *ngIf="auth.isAdmin()" routerLink="/admin" class="nav-link admin-link">Panel Admin</a>
+        <button class="btn-logout" (click)="logout()">Cerrar sesión</button>
+      </div>
     </ng-container>
     <ng-template #loginBlock>
-      <a routerLink="/login">Ingresar</a>
-      <a routerLink="/register">Registrarse</a>
+      <a routerLink="/login" class="nav-link">Ingresar</a>
+      <a routerLink="/register" class="btn-register">Registrarse</a>
     </ng-template>
   </div>
 </nav>

@@ -1,15 +1,33 @@
-<h2>Gimnasios para Gatos</h2>
-<app-product-filters (filterChange)="onFilter($event)"></app-product-filters>
-<div class="product-grid">
-  <div class="product-card" *ngFor="let p of products">
-    <img [src]="p.imagenUrl" [alt]="p.nombre" loading="lazy">
-    <h3>{{ p.nombre }}</h3>
-    <p class="desc">{{ p.descripcion }}</p>
-    <p><strong>${{ p.precio }}</strong> | {{ p.tamano }} | {{ p.color }}</p>
-    <div class="actions">
-      <a [routerLink]="['/productos', p.id]">Detalle</a>
-      <button (click)="addToCart(p)">Agregar al carrito</button>
+<div class="products-page">
+  <div class="page-header">
+    <h2>🐱 Nuestros Gimnasios</h2>
+    <p class="subtitle">El mejor espacio de diversión y ejercicio para tu felino</p>
+  </div>
+  <app-product-filters (filterChange)="onFilter($event)"></app-product-filters>
+  <div class="product-grid">
+    <div class="product-card" *ngFor="let p of products">
+      <div class="card-image">
+        <img [src]="p.imagenUrl" [alt]="p.nombre" loading="lazy">
+        <span class="card-badge">{{ p.tamano }}</span>
+      </div>
+      <div class="card-body">
+        <h3>{{ p.nombre }}</h3>
+        <p class="desc">{{ p.descripcion | slice:0:80 }}{{ p.descripcion.length > 80 ? '...' : '' }}</p>
+        <div class="card-meta">
+          <span class="color-dot" [style.background]="getColorHex(p.color)"></span>
+          <span>{{ p.color }}</span>
+          <span>•</span>
+          <span>{{ p.material }}</span>
+        </div>
+        <div class="card-footer">
+          <span class="price">${{ p.precio }}</span>
+          <div class="actions">
+            <a [routerLink]="['/productos', p.id]" class="btn-detail">Detalle</a>
+            <button (click)="addToCart(p)" class="btn-cart">🛒</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <p class="empty-msg" *ngIf="products.length === 0">No se encontraron productos con esos filtros.</p>
 </div>
-<p *ngIf="products.length === 0">No se encontraron productos.</p>

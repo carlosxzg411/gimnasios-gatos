@@ -1,1 +1,22 @@
-main { min-height: calc(100vh - 120px); padding: 20px; }
+.promo-banner {
+  background: linear-gradient(90deg, #2ecc71, #27ae60);
+  color: #fff;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  letter-spacing: 0.3px;
+}
+
+.promo-text { white-space: nowrap; }
+.promo-separator { color: rgba(255,255,255,0.5); }
+
+main {
+  min-height: calc(100vh - 160px);
+  padding: 30px 0;
+}

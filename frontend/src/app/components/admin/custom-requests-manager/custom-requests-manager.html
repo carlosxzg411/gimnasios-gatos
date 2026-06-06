@@ -1,15 +1,31 @@
-<h3>Solicitudes de Personalización</h3>
-<table>
-  <thead><tr><th>#</th><th>Usuario</th><th>Producto Interés</th><th>Descripción</th><th>Estado</th><th>Fecha</th><th>Acción</th></tr></thead>
-  <tbody>
-    <tr *ngFor="let r of requests">
-      <td>{{ r.id }}</td><td>{{ r.usuario?.nombre }}</td><td>{{ r.productoInteres || '-' }}</td>
-      <td>{{ r.descripcion }}</td><td>{{ r.estado }}</td><td>{{ r.fecha | date:'short' }}</td>
-      <td>
-        <select (change)="updateStatus(r.id, $any($event.target).value)" [value]="r.estado">
-          <option>PENDIENTE</option><option>EN_REVISION</option><option>RESPONDIDO</option><option>CERRADO</option>
-        </select>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="admin-section">
+  <div class="section-header">
+    <h3>🛠️ Solicitudes de Personalización</h3>
+  </div>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th>#</th><th>Usuario</th><th>Producto</th><th>Descripción</th><th>Estado</th><th>Fecha</th><th>Acción</th></tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let r of requests">
+          <td class="td-id">#{{ r.id }}</td>
+          <td>{{ r.usuario?.nombre }}</td>
+          <td>{{ r.productoInteres || '—' }}</td>
+          <td class="td-desc" title="{{ r.descripcion }}">{{ r.descripcion.length > 60 ? (r.descripcion | slice:0:60) + '...' : r.descripcion }}</td>
+          <td><span class="request-status" [class.pendiente]="r.estado === 'PENDIENTE'"
+                [class.revision]="r.estado === 'EN_REVISION'"
+                [class.respondido]="r.estado === 'RESPONDIDO'"
+                [class.cerrado]="r.estado === 'CERRADO'">{{ r.estado }}</span></td>
+          <td class="td-date">{{ r.fecha | date:'short' }}</td>
+          <td>
+            <select (change)="updateStatus(r.id, $any($event.target).value)" [value]="r.estado" class="status-select">
+              <option>PENDIENTE</option><option>EN_REVISION</option><option>RESPONDIDO</option><option>CERRADO</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

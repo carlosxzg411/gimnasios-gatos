@@ -1,25 +1,43 @@
-<h2>Checkout</h2>
-<div class="checkout">
-  <div class="order-summary">
-    <h3>Resumen del pedido</h3>
-    <div *ngFor="let item of items">
-      <p>{{ item.product.nombre }} x {{ item.cantidad }} = ${{ (item.product.precio * item.cantidad).toFixed(2) }}</p>
+<h2>📦 Finalizar Pedido</h2>
+<div class="checkout-wrapper">
+  <div class="checkout-form">
+    <div class="form-card">
+      <h3>Dirección de envío</h3>
+      <div class="form-group">
+        <label>Dirección</label>
+        <textarea [(ngModel)]="direccionEnvio" required rows="3" placeholder="Calle, número, ciudad, país"></textarea>
+      </div>
     </div>
-    <h4>Total: ${{ cart.getTotal().toFixed(2) }}</h4>
+    <div class="form-card">
+      <h3>Método de pago</h3>
+      <div class="payment-options">
+        <label class="payment-option">
+          <input type="radio" [(ngModel)]="metodoPago" value="stripe" checked>
+          <span>💳 Tarjeta de crédito/débito (Stripe)</span>
+        </label>
+        <label class="payment-option">
+          <input type="radio" [(ngModel)]="metodoPago" value="transferencia">
+          <span>🏦 Transferencia bancaria</span>
+        </label>
+      </div>
+    </div>
+    <p *ngIf="error" class="error-msg">{{ error }}</p>
+    <button (click)="submit()" class="btn-confirm">✅ Confirmar y Pagar</button>
   </div>
-  <div class="form">
-    <div class="form-group">
-      <label>Dirección de envío</label>
-      <textarea [(ngModel)]="direccionEnvio" required rows="3"></textarea>
+  <div class="checkout-summary">
+    <h3>Resumen del pedido</h3>
+    <div class="summary-items">
+      <div class="summary-item" *ngFor="let item of items">
+        <img [src]="item.product.imagenUrl" width="50" height="50">
+        <div>
+          <p class="item-name">{{ item.product.nombre }}</p>
+          <p class="item-qty">x{{ item.cantidad }}</p>
+        </div>
+        <p class="item-price">${{ (item.product.precio * item.cantidad).toFixed(2) }}</p>
+      </div>
     </div>
-    <div class="form-group">
-      <label>Método de pago</label>
-      <select [(ngModel)]="metodoPago">
-        <option value="stripe">Tarjeta (Stripe)</option>
-        <option value="transferencia">Transferencia bancaria</option>
-      </select>
-    </div>
-    <p *ngIf="error" class="error">{{ error }}</p>
-    <button (click)="submit()">Confirmar y Pagar</button>
+    <div class="summary-line"><span>Subtotal</span><span>${{ cart.getTotal().toFixed(2) }}</span></div>
+    <div class="summary-line"><span>Envío</span><span class="free">Gratis</span></div>
+    <div class="summary-total"><span>Total</span><span>${{ cart.getTotal().toFixed(2) }}</span></div>
   </div>
 </div>

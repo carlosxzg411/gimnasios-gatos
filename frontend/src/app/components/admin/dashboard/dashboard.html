@@ -1,6 +1,24 @@
-<h2>Panel de Administración</h2>
-<div class="admin-cards">
-  <a routerLink="/admin/products" class="card">Gestionar Productos</a>
-  <a routerLink="/admin/orders" class="card">Gestionar Pedidos</a>
-  <a routerLink="/admin/custom-requests" class="card">Solicitudes de Personalización</a>
+<div class="admin-dashboard">
+  <div class="dash-header">
+    <span class="dash-icon">⚙️</span>
+    <h2>Panel de Administración</h2>
+    <p>Gestiona productos, pedidos y solicitudes</p>
+  </div>
+  <div class="admin-cards">
+    <a routerLink="/admin/products" class="card card-products">
+      <span class="card-icon">📦</span>
+      <span class="card-title">Productos</span>
+      <span class="card-desc">CRUD de productos del catálogo</span>
+    </a>
+    <a routerLink="/admin/orders" class="card card-orders">
+      <span class="card-icon">📋</span>
+      <span class="card-title">Pedidos</span>
+      <span class="card-desc">Gestiona estados de pedidos</span>
+    </a>
+    <a routerLink="/admin/custom-requests" class="card card-custom">
+      <span class="card-icon">🛠️</span>
+      <span class="card-title">Personalización</span>
+      <span class="card-desc">Solicitudes de clientes</span>
+    </a>
+  </div>
 </div>

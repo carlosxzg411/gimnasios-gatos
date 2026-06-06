@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { NgFor, DatePipe } from '@angular/common';
+import { NgFor, DatePipe, SlicePipe } from '@angular/common';
 import { AdminService } from '../../../services/admin';
 import { CustomRequest } from '../../../models/custom-request.model';
 
 @Component({
   selector: 'app-custom-requests-manager',
-  imports: [NgFor, DatePipe],
+  imports: [NgFor, DatePipe, SlicePipe],
   templateUrl: './custom-requests-manager.html',
   styleUrl: './custom-requests-manager.css'
 })

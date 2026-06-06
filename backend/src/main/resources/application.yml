@@ -20,6 +20,18 @@ spring:
       write-dates-as-timestamps: false
     date-format: yyyy-MM-dd HH:mm:ss
 
+  mail:
+    host: smtp.example.com
+    port: 587
+    username: dummy
+    password: dummy
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
   servlet:
     multipart:
       max-file-size: 10MB
