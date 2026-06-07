@@ -13,12 +13,22 @@ import { Product } from '../../../models/product.model';
 })
 export class ProductDetailComponent implements OnInit {
   product?: Product;
+  loading = true;
+  error = '';
 
-  constructor(private route: ActivatedRoute, private productService: ProductService, private cart: CartService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private productService: ProductService,
+    private cart: CartService
+  ) {}
 
   ngOnInit() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.productService.getById(id).subscribe(data => this.product = data);
+    if (!id) { this.error = 'ID de producto inválido'; this.loading = false; return; }
+    this.productService.getById(id).subscribe({
+      next: data => { this.product = data; this.loading = false; },
+      error: err => { this.error = err.error?.message || 'Error al cargar el producto'; this.loading = false; }
+    });
   }
 
   addToCart() {

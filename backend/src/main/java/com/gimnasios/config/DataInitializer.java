@@ -39,7 +39,7 @@ public class DataInitializer implements CommandLineRunner {
                     .color("Beige")
                     .material("Sisal y MDF")
                     .stock(10)
-                    .imagenUrl("https://placehold.co/400x400?text=Torre+Clasica")
+                    .imagenUrl("https://cdn.phototourl.com/free/2026-06-06-4651d746-995a-4268-a019-41050ef6b1d2.png")
                     .build());
             productRepository.save(Product.builder()
                     .nombre("Gimnasio Compacto")
@@ -49,7 +49,7 @@ public class DataInitializer implements CommandLineRunner {
                     .color("Gris")
                     .material("Cartón y Sisal")
                     .stock(15)
-                    .imagenUrl("https://placehold.co/400x400?text=Compacto")
+                    .imagenUrl("https://cdn.phototourl.com/free/2026-06-06-4651d746-995a-4268-a019-41050ef6b1d2.png")
                     .build());
             productRepository.save(Product.builder()
                     .nombre("Gimnasio Deluxe")
@@ -59,7 +59,7 @@ public class DataInitializer implements CommandLineRunner {
                     .color("Crema")
                     .material("Madera y Sisal")
                     .stock(5)
-                    .imagenUrl("https://placehold.co/400x400?text=Deluxe")
+                    .imagenUrl("https://cdn.phototourl.com/free/2026-06-06-4651d746-995a-4268-a019-41050ef6b1d2.png")
                     .build());
             productRepository.save(Product.builder()
                     .nombre("Rascador Simple")
@@ -69,7 +69,7 @@ public class DataInitializer implements CommandLineRunner {
                     .color("Natural")
                     .material("Sisal")
                     .stock(20)
-                    .imagenUrl("https://placehold.co/400x400?text=Rascador")
+                    .imagenUrl("https://cdn.phototourl.com/free/2026-06-06-4651d746-995a-4268-a019-41050ef6b1d2.png")
                     .build());
             productRepository.save(Product.builder()
                     .nombre("Gimnasio Modular")
@@ -79,7 +79,7 @@ public class DataInitializer implements CommandLineRunner {
                     .color("Blanco")
                     .material("MDF forrado en tela")
                     .stock(8)
-                    .imagenUrl("https://placehold.co/400x400?text=Modular")
+                    .imagenUrl("https://cdn.phototourl.com/free/2026-06-06-4651d746-995a-4268-a019-41050ef6b1d2.png")
                     .build());
             productRepository.save(Product.builder()
                     .nombre("Cama Colgante Ventana")
@@ -89,7 +89,7 @@ public class DataInitializer implements CommandLineRunner {
                     .color("Gris")
                     .material("Tela y ventosas")
                     .stock(12)
-                    .imagenUrl("https://placehold.co/400x400?text=Cama+Colgante")
+                    .imagenUrl("https://cdn.phototourl.com/free/2026-06-06-4651d746-995a-4268-a019-41050ef6b1d2.png")
                     .build());
             productRepository.save(Product.builder()
                     .nombre("Túnel Plegable")
@@ -99,7 +99,7 @@ public class DataInitializer implements CommandLineRunner {
                     .color("Azul")
                     .material("Poliéster y alambre")
                     .stock(25)
-                    .imagenUrl("https://placehold.co/400x400?text=Tunel")
+                    .imagenUrl("https://cdn.phototourl.com/free/2026-06-06-4651d746-995a-4268-a019-41050ef6b1d2.png")
                     .build());
             productRepository.save(Product.builder()
                     .nombre("Rascador Pared")
@@ -109,7 +109,7 @@ public class DataInitializer implements CommandLineRunner {
                     .color("Beige")
                     .material("Sisal natural")
                     .stock(18)
-                    .imagenUrl("https://placehold.co/400x400?text=Rascador+Pared")
+                    .imagenUrl("https://cdn.phototourl.com/free/2026-06-06-4651d746-995a-4268-a019-41050ef6b1d2.png")
                     .build());
             productRepository.save(Product.builder()
                     .nombre("Castillo Felino")
@@ -119,7 +119,7 @@ public class DataInitializer implements CommandLineRunner {
                     .color("Crema")
                     .material("Madera y Sisal")
                     .stock(3)
-                    .imagenUrl("https://placehold.co/400x400?text=Castillo")
+                    .imagenUrl("https://cdn.phototourl.com/free/2026-06-06-4651d746-995a-4268-a019-41050ef6b1d2.png")
                     .build());
             productRepository.save(Product.builder()
                     .nombre("Gimnasio Escalera")
@@ -129,7 +129,7 @@ public class DataInitializer implements CommandLineRunner {
                     .color("Natural")
                     .material("Madera y Sisal")
                     .stock(10)
-                    .imagenUrl("https://placehold.co/400x400?text=Escalera")
+                    .imagenUrl("https://cdn.phototourl.com/free/2026-06-06-4651d746-995a-4268-a019-41050ef6b1d2.png")
                     .build());
             productRepository.save(Product.builder()
                     .nombre("Rascador Tipo Cactus")
@@ -139,7 +139,7 @@ public class DataInitializer implements CommandLineRunner {
                     .color("Verde")
                     .material("Sisal y felpa")
                     .stock(14)
-                    .imagenUrl("https://placehold.co/400x400?text=Cactus")
+                    .imagenUrl("https://cdn.phototourl.com/free/2026-06-06-4651d746-995a-4268-a019-41050ef6b1d2.png")
                     .build());
             productRepository.save(Product.builder()
                     .nombre("Cueva Igloo")
@@ -149,7 +149,7 @@ public class DataInitializer implements CommandLineRunner {
                     .color("Negro")
                     .material("Felpa antialérgica")
                     .stock(9)
-                    .imagenUrl("https://placehold.co/400x400?text=Igloo")
+                    .imagenUrl("https://cdn.phototourl.com/free/2026-06-06-4651d746-995a-4268-a019-41050ef6b1d2.png")
                     .build());
             productRepository.save(Product.builder()
                     .nombre("Kit Juguetes 10pz")
@@ -159,7 +159,7 @@ public class DataInitializer implements CommandLineRunner {
                     .color("Multicolor")
                     .material("Varios")
                     .stock(30)
-                    .imagenUrl("https://placehold.co/400x400?text=Kit+Juguetes")
+                    .imagenUrl("https://cdn.phototourl.com/free/2026-06-06-4651d746-995a-4268-a019-41050ef6b1d2.png")
                     .build());
             productRepository.save(Product.builder()
                     .nombre("Fuente de Agua")
@@ -169,7 +169,7 @@ public class DataInitializer implements CommandLineRunner {
                     .color("Blanco")
                     .material("Plástico libre de BPA")
                     .stock(20)
-                    .imagenUrl("https://placehold.co/400x400?text=Fuente+Agua")
+                    .imagenUrl("https://cdn.phototourl.com/free/2026-06-06-4651d746-995a-4268-a019-41050ef6b1d2.png")
                     .build());
             productRepository.save(Product.builder()
                     .nombre("Árbol Rascador XL")
@@ -179,7 +179,7 @@ public class DataInitializer implements CommandLineRunner {
                     .color("Beige")
                     .material("Madera, Sisal y felpa")
                     .stock(4)
-                    .imagenUrl("https://placehold.co/400x400?text=Arbol+XL")
+                    .imagenUrl("https://cdn.phototourl.com/free/2026-06-06-4651d746-995a-4268-a019-41050ef6b1d2.png")
                     .build());
             productRepository.save(Product.builder()
                     .nombre("Cama Gato Frutal")
@@ -189,7 +189,7 @@ public class DataInitializer implements CommandLineRunner {
                     .color("Verde")
                     .material("Felpa hipoalergénica")
                     .stock(16)
-                    .imagenUrl("https://placehold.co/400x400?text=Cama+Frutal")
+                    .imagenUrl("https://cdn.phototourl.com/free/2026-06-06-4651d746-995a-4268-a019-41050ef6b1d2.png")
                     .build());
             productRepository.save(Product.builder()
                     .nombre("Estante Gato Ventana")
@@ -199,7 +199,7 @@ public class DataInitializer implements CommandLineRunner {
                     .color("Negro")
                     .material("Metal y espuma")
                     .stock(22)
-                    .imagenUrl("https://placehold.co/400x400?text=Estante")
+                    .imagenUrl("https://cdn.phototourl.com/free/2026-06-06-4651d746-995a-4268-a019-41050ef6b1d2.png")
                     .build());
             productRepository.save(Product.builder()
                     .nombre("Gimnasio Rascador Torre")
@@ -209,7 +209,7 @@ public class DataInitializer implements CommandLineRunner {
                     .color("Crema")
                     .material("MDF y Sisal")
                     .stock(11)
-                    .imagenUrl("https://placehold.co/400x400?text=Torre+2Niveles")
+                    .imagenUrl("https://cdn.phototourl.com/free/2026-06-06-4651d746-995a-4268-a019-41050ef6b1d2.png")
                     .build());
         }
     }

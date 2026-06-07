@@ -1,27 +1,38 @@
-<div class="detail-wrapper" *ngIf="product">
-  <div class="detail-image">
-    <img [src]="product.imagenUrl" [alt]="product.nombre">
-    <span class="detail-badge">{{ product.tamano }}</span>
+<div class="detail-page">
+  <div class="loading-state" *ngIf="loading">
+    <p>Cargando producto...</p>
   </div>
-  <div class="detail-info">
-    <h2>{{ product.nombre }}</h2>
-    <p class="detail-desc">{{ product.descripcion }}</p>
-    <div class="detail-price">${{ product.precio }}</div>
-    <div class="detail-meta">
-      <div class="meta-item"><strong>Tamaño:</strong> {{ product.tamano }}</div>
-      <div class="meta-item"><strong>Color:</strong> {{ product.color }}</div>
-      <div class="meta-item"><strong>Tipo:</strong> {{ product.material }}</div>
-      <div class="meta-item"><strong>Stock:</strong>
-        <span [class.stock-ok]="product.stock > 5"
-              [class.stock-low]="product.stock > 0 && product.stock <= 5"
-              [class.stock-out]="product.stock === 0">
-          {{ product.stock > 0 ? product.stock + ' unidades' : 'Agotado' }}
-        </span>
-      </div>
+
+  <div class="error-state" *ngIf="error">
+    <p>⚠️ {{ error }}</p>
+    <a routerLink="/productos" class="btn-back">← Volver a productos</a>
+  </div>
+
+  <div class="detail-wrapper" *ngIf="product && !loading">
+    <div class="detail-image">
+      <img [src]="product.imagenUrl" [alt]="product.nombre">
+      <span class="detail-badge">{{ product.tamano }}</span>
     </div>
-    <div class="detail-actions">
-      <button (click)="addToCart()" class="btn-add-cart">🛒 Agregar al carrito</button>
-      <a routerLink="/productos" class="btn-back">← Volver</a>
+    <div class="detail-info">
+      <a routerLink="/productos" class="back-link">← Volver</a>
+      <h2>{{ product.nombre }}</h2>
+      <p class="detail-desc">{{ product.descripcion }}</p>
+      <div class="detail-price">${{ product.precio }}</div>
+      <div class="detail-meta">
+        <div class="meta-item"><strong>Tamaño:</strong> {{ product.tamano }}</div>
+        <div class="meta-item"><strong>Color:</strong> {{ product.color }}</div>
+        <div class="meta-item"><strong>Tipo:</strong> {{ product.material }}</div>
+        <div class="meta-item"><strong>Stock:</strong>
+          <span [class.stock-ok]="product.stock > 5"
+                [class.stock-low]="product.stock > 0 && product.stock <= 5"
+                [class.stock-out]="product.stock === 0">
+            {{ product.stock > 0 ? product.stock + ' unidades' : 'Agotado' }}
+          </span>
+        </div>
+      </div>
+      <div class="detail-actions">
+        <button (click)="addToCart()" class="btn-add-cart">🛒 Agregar al carrito</button>
+      </div>
     </div>
   </div>
 </div>
