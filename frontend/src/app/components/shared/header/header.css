@@ -31,20 +31,20 @@ nav {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
 }
 
-.logo-icon { font-size: 1.8rem; }
+.logo-img { height: 56px; width: auto; }
 
-.logo-text {
-  font-size: 1.4rem;
+.logo-title {
+  font-size: 0.85rem;
   font-weight: 800;
   color: var(--secondary);
-  letter-spacing: -0.5px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
-
-.logo-highlight { color: var(--primary-dark); }
 
 .nav-links {
   display: flex;
