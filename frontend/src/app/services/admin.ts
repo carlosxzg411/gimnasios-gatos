@@ -7,7 +7,7 @@ import {CustomRequest} from '../models/custom-request.model';
 
 @Injectable({providedIn: 'root'})
 export class AdminService {
-  private apiUrl = 'http://localhost:8080/api/admin';
+  private apiUrl = '/api/admin';
 
   constructor(private http: HttpClient) {}
 

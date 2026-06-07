@@ -5,7 +5,7 @@ import {CustomRequest} from '../models/custom-request.model';
 
 @Injectable({providedIn: 'root'})
 export class CustomizationService {
-  private apiUrl = 'http://localhost:8080/api/custom-requests';
+  private apiUrl = '/api/custom-requests';
 
   constructor(private http: HttpClient) {}
 
