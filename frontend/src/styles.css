@@ -42,23 +42,6 @@ body.dark {
   --footer-border: rgba(255,255,255,0.06);
 }
 
-body.dark {
-  --primary: #10b981;
-  --primary-dark: #059669;
-  --primary-light: #064e3b;
-  --secondary: #f1f5f9;
-  --accent: #f59e0b;
-  --danger: #f87171;
-  --bg: #0f172a;
-  --card-bg: #1e293b;
-  --text: #f1f5f9;
-  --text-light: #94a3b8;
-  --border: #334155;
-  --shadow: 0 2px 12px rgba(0,0,0,0.3);
-  --shadow-hover: 0 6px 24px rgba(0,0,0,0.4);
-  --overlay: rgba(255,255,255,0.04);
-}
-
 * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
@@ -67,6 +50,13 @@ body {
   color: var(--text);
   line-height: 1.6;
 }
+
+input, textarea, select {
+  color: var(--text);
+  background: var(--bg);
+}
+
+::placeholder { color: var(--text-light); opacity: 0.7; }
 
 a { color: var(--primary-dark); text-decoration:none; }
 a:hover { text-decoration:underline; }
