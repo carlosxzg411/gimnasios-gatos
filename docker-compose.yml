@@ -1,0 +1,53 @@
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: gimnasios-gatos:latest
+    container_name: gimnasios-gatos-app
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8080}:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - APP_JWT_SECRET=${APP_JWT_SECRET:?err}
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY:?err}
+      - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET:?err}
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/gimnasios_gatos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=${MYSQL_USER:-gimnasios_app}
+      - SPRING_DATASOURCE_PASSWORD=${MYSQL_PASSWORD:?err}
+      - SMTP_HOST=${SMTP_HOST:?err}
+      - SMTP_PORT=${SMTP_PORT:-587}
+      - SMTP_USERNAME=${SMTP_USERNAME:?err}
+      - SMTP_PASSWORD=${SMTP_PASSWORD:?err}
+      - EMAIL_FROM=${EMAIL_FROM:?err}
+      - EMAIL_FABRICANTE=${EMAIL_FABRICANTE:?err}
+      - SHOW_SQL=false
+      - FORMAT_SQL=false
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mysql:8.0
+    container_name: gimnasios-gatos-db
+    restart: unless-stopped
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:?err}
+      - MYSQL_DATABASE=gimnasios_gatos
+      - MYSQL_USER=${MYSQL_USER:-gimnasios_app}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD:?err}
+    ports:
+      - "${MYSQL_PORT:-3307}:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mysql_data:
+    driver: local

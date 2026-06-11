@@ -1,0 +1,15 @@
+node_modules
+npm-debug.log
+dist
+target
+*.log
+.DS_Store
+.git
+.gitignore
+.github
+.env
+.env.local
+*.md
+backend/.mvn
+backend/mvnw
+backend/mvnw.cmd

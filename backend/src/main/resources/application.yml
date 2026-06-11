@@ -1,19 +1,19 @@
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 spring:
   application:
     name: gimnasios-gatos
   profiles:
-    active: dev
+    active: ${SPRING_PROFILES_ACTIVE:dev}
 
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
+    show-sql: ${SHOW_SQL:true}
     properties:
       hibernate:
-        format_sql: true
+        format_sql: ${FORMAT_SQL:true}
 
   jackson:
     serialization:
@@ -21,10 +21,10 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
 
   mail:
-    host: smtp.example.com
-    port: 587
-    username: dummy
-    password: dummy
+    host: ${SMTP_HOST:}
+    port: ${SMTP_PORT:587}
+    username: ${SMTP_USERNAME:}
+    password: ${SMTP_PASSWORD:}
     properties:
       mail:
         smtp:
@@ -39,13 +39,13 @@ spring:
 
 app:
   jwt:
-    secret: gimnasios-gatos-secret-key-change-in-production-must-be-at-least-256-bits-long
-    expiration-ms: 86400000
+    secret: ${APP_JWT_SECRET:dev-jwt-secret-not-safe-for-production}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
 
   email:
-    from: no-reply@gimnasiosgatos.com
-    fabricante-email: fabricante@gimnasiosgatos.com
+    from: ${EMAIL_FROM:no-reply@gimnasiosgatos.com}
+    fabricante-email: ${EMAIL_FABRICANTE:}
 
   stripe:
-    secret-key: sk_test_placeholder
-    webhook-secret: whsec_placeholder
+    secret-key: ${STRIPE_SECRET_KEY:}
+    webhook-secret: ${STRIPE_WEBHOOK_SECRET:}
